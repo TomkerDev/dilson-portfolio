@@ -5,6 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dilson Le Mustang — Application & Musique Officielles</title>
   <meta name="description" content="Site officiel de Dilson Le Mustang. Téléchargez l'application mobile Android pour écouter ses titres en exclusivité et hors-ligne.">
+
+  <!-- SEO & Social (Open Graph / Twitter) -->
+  <!-- NOTE: og:url & og:image utilisent des chemins relatifs car le domaine définitif n'est pas connu. -->
+  <meta property="og:title" content="Dilson Le Mustang — Application & Musique Officielles">
+  <meta property="og:description" content="Site officiel de Dilson Le Mustang. Téléchargez l'application mobile Android pour écouter ses titres en exclusivité et hors-ligne.">
+  <meta property="og:image" content="./dilson_cover.png">
+  <meta property="og:image:alt" content="Dilson Le Mustang — couverture de l'application">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dilson Le Mustang — Application & Musique Officielles">
+  <meta name="twitter:description" content="Téléchargez l'application Android officielle et écoutez les titres de Dilson Le Mustang en exclusivité et hors-ligne.">
+  <meta name="twitter:image" content="./dilson_cover.png">
+
+  <!-- Favicon & Theme -->
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Ccircle cx='18' cy='18' r='18' fill='%238b5cf6'/%3E%3Cpath d='M10 24l16-8-16-8z' fill='%23fff'/%3E%3C/svg%3E">
+
+  <!-- Preload de l'asset hero critique -->
+  <link rel="preload" as="image" href="./dilson_cover.png">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -35,8 +55,15 @@
       0%, 100% { box-shadow: 0 0 25px rgba(139, 92, 246, 0.4); }
       50% { box-shadow: 0 0 45px rgba(139, 92, 246, 0.8); }
     }
-    .glow-effect {
+        .glow-effect {
       animation: pulse-glow 3s infinite;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+    #accueil, #chansons, #contact, #bio {
+      scroll-margin-top: 5rem;
     }
   </style>
 </head>
@@ -108,7 +135,7 @@
         <!-- Visuel Artiste -->
         <div class="relative flex justify-center">
           <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden border-2 border-slate-800 shadow-2xl bg-slate-900">
-            <img src="./dilson_cover.jpg" alt="Dilson Le Mustang" class="w-full h-full object-cover" onError="this.src='https://via.placeholder.com/400x400/1e1b4b/8b5cf6?text=Dilson+Le+Mustang'">
+            <img src="./dilson_cover.png" alt="Dilson Le Mustang — couverture de l'application" class="w-full h-full object-cover" decoding="async" onError="this.src='https://placehold.co/400x400/1e1b4b/8b5cf6?text=Dilson+Le+Mustang'">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
             
             <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl backdrop-blur-md bg-slate-900/80 border border-slate-800">
@@ -144,7 +171,7 @@
               <p class="text-xs text-slate-400">Dilson Le Mustang • Single</p>
             </div>
           </div>
-          <audio controls class="w-full h-8 my-2">
+                    <audio controls preload="metadata" class="w-full h-8 my-2" aria-label="Lire Terminus de Dilson Le Mustang">
             <source src="./dilson_track_1.m4a" type="audio/mp4">
             Votre navigateur ne supporte pas le lecteur audio.
           </audio>
@@ -165,8 +192,9 @@
               <p class="text-xs text-slate-400">Dilson Le Mustang • Dernière Charge</p>
             </div>
           </div>
-          <audio controls class="w-full h-8 my-2">
+                    <audio controls preload="metadata" class="w-full h-8 my-2" aria-label="Lire Samatcha de Dilson Le Mustang">
             <source src="./dilson_track_2.m4a" type="audio/mp4">
+            Votre navigateur ne supporte pas le lecteur audio.
           </audio>
           <div class="mt-3 flex items-center justify-between text-xs text-slate-500">
             <span><i class="fa-solid fa-wifi mr-1"></i> Mode Offline</span>
@@ -185,8 +213,9 @@
               <p class="text-xs text-slate-400">Dilson Le Mustang • Album 2026</p>
             </div>
           </div>
-          <audio controls class="w-full h-8 my-2">
+                    <audio controls preload="metadata" class="w-full h-8 my-2" aria-label="Lire Dernière Charge de Dilson Le Mustang">
             <source src="./dilson_track_3.m4a" type="audio/mp4">
+            Votre navigateur ne supporte pas le lecteur audio.
           </audio>
           <div class="mt-3 flex items-center justify-between text-xs text-slate-500">
             <span><i class="fa-solid fa-wifi mr-1"></i> Mode Offline</span>
